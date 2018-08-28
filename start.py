@@ -30,11 +30,11 @@ test_generator = test_datagen.flow_from_directory(
         batch_size=20,
         class_mode='categorical')
 
-validation_generator = test_datagen.flow_from_directory(
-        'vowels',
-        target_size=(36, 36),
-        batch_size=14,
-        class_mode='categorical')
+# validation_generator = test_datagen.flow_from_directory(
+#         'vowels',
+#         target_size=(36, 36),
+#         batch_size=14,
+#         class_mode='categorical')
 
 import os.path
 if os.path.exists('model.h5'):
@@ -82,4 +82,3 @@ def printPredictions(predict_dict,predictions):
         print(predicted_label)
 
 printPredictions(train_generator.class_indices, predictions)
-
