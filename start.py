@@ -42,19 +42,19 @@ if os.path.exists('model.h5'):
 
 
 
-# model.fit_generator(
-#         train_generator,
-#         steps_per_epoch=3910 // batch_size,
-#         epochs=50,
-#         verbose=1,
-#         shuffle=True)
-# model.save_weights('model.h5')
+model.fit_generator(
+        train_generator,
+        steps_per_epoch=3910 // batch_size,
+        epochs=50,
+        verbose=1,
+        shuffle=True)
+model.save_weights('model.h5')
 
-# score = model.evaluate_generator(
-#         test_generator,
-#         steps=3910, max_queue_size=10, workers=1, use_multiprocessing=False, verbose=1)
+score = model.evaluate_generator(
+        test_generator,
+        steps=3910, max_queue_size=10, workers=1, use_multiprocessing=False, verbose=1)
 
-# print('Test Loss :',score[0],'\nTest Accuracy :',score[1])
+print('Test Loss :',score[0],'\nTest Accuracy :',score[1])
 
 predict_generator = test_datagen.flow_from_directory(
         'uci/predict',
