@@ -52,7 +52,7 @@ model.save_weights('model.h5')
 
 score = model.evaluate_generator(
         test_generator,
-        steps=3910, max_queue_size=10, workers=1, use_multiprocessing=False, verbose=1)
+        steps=3910, max_queue_size=10, workers=1, use_multiprocessing=False)
 
 print('Test Loss :',score[0],'\nTest Accuracy :',score[1])
 
