@@ -6,10 +6,10 @@ import numpy as np
 # print(keras._version_)
 model = keras.Sequential()
 # first layer
-model.add(keras.layers.Dense(256, activation='relu', input_shape=(32,32,3)))
-model.add(keras.layers.Flatten())
+model.add(keras.layers.Conv2D(64, kernel_size = 3, activation = 'relu', input_shape = (32, 32, 3), data_format="channels_last"))
 #second layers
-model.add(keras.layers.Dense(96, activation='relu'))
+model.add(keras.layers.Conv2D(32, kernel_size = 3, activation = 'relu'))
+model.add(keras.layers.Flatten())
 #softmax layers
 model.add(keras.layers.Dense(46, activation='softmax'))
 model.compile(optimizer=tf.train.AdamOptimizer(0.001), loss='categorical_crossentropy',metrics=[keras.metrics.categorical_accuracy])
