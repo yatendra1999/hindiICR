@@ -1,6 +1,6 @@
 # HINDI-ICR 
 
-Hindi-ICR is the first ML Classifier for handwritten hindi characters.
+Hindi-ICR is an ML Classifier for handwritten hindi characters.
 
 ## Description
 
